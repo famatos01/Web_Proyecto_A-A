@@ -1,0 +1,28 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado - Evaluación de Vehículo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container result">
+        <h1>Resultado de la Evaluación</h1>
+        <div class="prediction-box">
+            <h2>Clasificación Obtenida:</h2>
+            <p class="prediction-result">{{ prediction }}</p>
+        </div>
+        
+        <div class="details">
+            <h3>Detalles de la Entrada:</h3>
+            <ul>
+                {% for key, value in features.items() %}
+                <li><strong>{{ key|title }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <a href="/" class="button">Nueva Evaluación</a>
+    </div>
+</body>
+</html>

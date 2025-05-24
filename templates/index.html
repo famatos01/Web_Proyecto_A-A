@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluador de Calidad de Vehículos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Evaluación de Calidad de Vehículos</h1>
+        <form action="/predict" method="post">
+            <!-- Precio de Compra -->
+            <div class="form-group">
+                <label>Precio de Compra:</label>
+                <select name="buying" required>
+                    <option value="vhigh">Muy Alto</option>
+                    <option value="high">Alto</option>
+                    <option value="med">Medio</option>
+                    <option value="low">Bajo</option>
+                </select>
+            </div>
+
+            <!-- Precio de Mantenimiento -->
+            <div class="form-group">
+                <label>Precio de Mantenimiento:</label>
+                <select name="maint" required>
+                    <option value="vhigh">Muy Alto</option>
+                    <option value="high">Alto</option>
+                    <option value="med">Medio</option>
+                    <option value="low">Bajo</option>
+                </select>
+            </div>
+
+            <!-- Número de Puertas -->
+            <div class="form-group">
+                <label>Número de Puertas:</label>
+                <select name="doors" required>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5more">5 o más</option>
+                </select>
+            </div>
+
+            <!-- Capacidad de Pasajeros -->
+            <div class="form-group">
+                <label>Capacidad de Pasajeros:</label>
+                <select name="persons" required>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="more">Más de 4</option>
+                </select>
+            </div>
+
+            <!-- Tamaño del Maletero -->
+            <div class="form-group">
+                <label>Tamaño del Maletero:</label>
+                <select name="lug_boot" required>
+                    <option value="small">Pequeño</option>
+                    <option value="med">Mediano</option>
+                    <option value="big">Grande</option>
+                </select>
+            </div>
+
+            <!-- Nivel de Seguridad -->
+            <div class="form-group">
+                <label>Nivel de Seguridad:</label>
+                <select name="safety" required>
+                    <option value="low">Baja</option>
+                    <option value="med">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+
+            <button type="submit">Evaluar Vehículo</button>
+        </form>
+    </div>
+</body>
+</html>
